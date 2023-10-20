@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { Route, Routes } from "react-router-dom";
+import GetAllUser from "./components/getAllUser/GetAllUser";
+import Login from "./components/login/Login";
+import Table from "./sharedcomponent/table/Table";
+import AllContact from "./components/getAllContact/AllContact";
+import GetAllContactDetails from "./components/getAllContactDetails/GetAllContactDetails";
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <Routes>
+    <Route exact path={`/`}element={<Login/>}/>
+    <Route exact path={`/alluser/`}element={<GetAllUser/>}/>
+    <Route exact path={`/allcontact/`}element={<AllContact/>}/>
+    <Route exact path={`/allcontactdetail/`}element={<GetAllContactDetails/>}/>
+ 
+   </Routes>
+
   );
 }
 
